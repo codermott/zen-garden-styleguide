@@ -1,7 +1,9 @@
 @use 'variables' as *; //this puts all the variables in the global namespace.
 @use 'atoms';
-//@use 'molecules';
-//@use 'organisms' as o;
+@use 'molecules';
+@use 'organisms' as o;
+
+@import url('https://fonts.googleapis.com/css2?family=Atomic+Age&family=Neuton&display=swap');
 
 * {
   box-sizing: border-box;

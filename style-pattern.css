@@ -1,25 +1,27 @@
-h2,
+@import url("https://fonts.googleapis.com/css2?family=Atomic+Age&family=Neuton&display=swap");
+h1,
 h3,
 h4 {
-  font-family: "arial narrow", Arial, Verdana, sans-serif;
+  font-family: "Atomic Age", Verdana, sans-serif;
   margin: 0;
 }
 
 h1 {
-  background: #ea2e49;
-  color: #fff;
-  display: inline-block;
-  font-weight: normal;
-  margin-bottom: 1em;
-  padding: 0.5em 1em;
-}
-
-h2 {
   color: #fff;
   font-weight: 900; /* Heavy */
   font-size: 6em;
   letter-spacing: 1px;
   line-height: 1em;
+}
+
+h2 {
+  background: #FF8C42;
+  color: #fff;
+  display: inline-block;
+  font-weight: normal;
+  font-size: 3em;
+  margin-bottom: 1em;
+  padding: 0.5em 1em;
 }
 
 h3 {
@@ -39,11 +41,15 @@ h4 {
 }
 
 p {
-  font-family: verdana, arial, sans-serif;
-  font-size: 1em;
+  font-family: "Neuton", Georgia, serif;
+  font-size: 1.5em;
   line-height: 1.5em;
   padding: 0.5em 0;
   margin: 0;
+}
+
+img {
+  max-width: 100%;
 }
 
 a {
@@ -54,7 +60,40 @@ a {
 }
 
 a:hover {
-  border-color: #ea2e49;
+  border-color: #FF8C42;
+}
+
+[role=banner] > h1 {
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.summary {
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 15% 0;
+}
+.summary p:last-child {
+  border-top: 1px solid #FF8C42;
+  margin-top: 1em;
+  padding-top: 1.5em;
+}
+.summary a {
+  color: #fff;
+}
+
+.preamble {
+  background: rgba(255, 255, 255, 0.9);
+  margin-left: -30%;
+  padding: 5% 5% 5% 30%;
+}
+
+.intro {
+  padding: 5%;
 }
 
 * {
@@ -67,10 +106,10 @@ html {
 }
 
 body {
-  font-family: verdana, arial, sans-serif;
+  font-family: "Neuton", Georgia, serif;
   font-size: 85%;
   color: #333;
-  background-color: #77c4d3;
+  background-color: #4E598C;
   margin: 0;
   padding: 1em;
 }
@@ -101,15 +140,15 @@ section {
 }
 
 .primary {
-  background-color: #77c4d3;
+  background-color: #4E598C;
 }
 
 .accent1 {
-  background-color: #ea2e49;
+  background-color: #FF8C42;
 }
 
 .accent2 {
-  background-color: rgba(246, 247, 146, 0.9);
+  background-color: #F9C7E4;
 }
 
 .text-dark {

@@ -1,21 +1,138 @@
 @use "variables" as *; //this puts all the variables in the global namespace.
-// @use 'atoms';
-//@use 'molecules';
-//@use 'organisms' as o;
+@use "atoms";
+@use "molecules";
+@use "organisms";
+
+@import url("https://fonts.googleapis.com/css2?family=Atomic+Age&family=Neuton&display=swap");
 
 * {
   box-sizing: border-box;
 }
-html {
-  background-color: $background-color;
-  padding: 5%;
-}
 
 body {
+  width: 98vw;
   font-family: $fonts-body;
   font-size: 85%;
-  color: $text-dark;
-  background-color: $primary;
+  color: #333;
+  background-color: #3498db;
   margin: 0;
+}
+
+.page-wrapper {
+  width: 100%;
+}
+
+section {
+  background-color: white;
   padding: 1em;
+}
+
+p {
+  margin-top: 0;
+  text-align: justify;
+}
+
+h3 {
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  color: #7d775c;
+}
+
+a:link {
+  font-weight: bold;
+  text-decoration: none;
+  color: #b7a5df;
+}
+
+a:visited {
+  font-weight: bold;
+  text-decoration: none;
+  color: #d4cddc;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+  color: #9685ba;
+}
+
+// .page-wrapper {
+//   @include atoms.responsive("small") {
+//     padding: 0;
+//   }
+
+//   @include atoms.responsive("medium") {
+//     padding: 0 30px;
+//   }
+
+//   @include atoms.responsive("large") {
+//     padding: 0 80px;
+//   }
+
+//   margin: 0;
+// }
+
+.intro {
+  @include atoms.set-flex(column, wrap);
+  width: 100%;
+}
+
+header h1 {
+  width: 100%;
+  margin-top: 10px;
+  display: block;
+  color: #fff;
+}
+
+header .banner h2 {
+  color: #fff;
+}
+
+header {
+  padding-top: 20px;
+  height: 87px;
+}
+
+.summary {
+  @include atoms.responsive(small) {
+    margin: 300px auto;
+    margin-bottom: 10px;
+  }
+  @include atoms.responsive(medium) {
+    margin: 300px auto;
+    margin-bottom: 10px;
+  }
+  @include atoms.responsive(large) {
+    margin: 200px auto;
+    margin-bottom: 20px;
+  }
+}
+
+.summary p {
+  font: italic 1.1em/2.2l;
+  text-align: center;
+  color: #fff;
+  background-color: $primary;
+}
+
+.preamble {
+  margin: 0 auto;
+  padding: 0px 10px 0 10px;
+}
+
+.supporting {
+  padding-left: 10px;
+  margin-bottom: 40px;
+}
+
+footer {
+  text-align: center;
+  color: #fff;
+}
+
+footer a:link,
+footer a:visited {
+  margin-right: 20px;
+  color: #fff;
 }

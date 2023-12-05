@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use "variables" as *;
 
 // mixins to take care of repeated patterns.
 @mixin set-font($size: 1em, $line-height: normal, $font: $fonts-body) {
@@ -23,6 +23,26 @@
   margin-top: 1em;
   padding-top: 1.5em;
 }
+
+@mixin responsive($size) {
+  @if $size == small {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+
+  @if $size == medium {
+    @media only screen and (min-width: 481px) {
+      @content;
+    }
+  }
+
+  @if $size == large {
+    @media only screen and (min-width: 945px) {
+      @content;
+    }
+  }
+}
 // these styles here should describe how the atoms (elements) should appear most of the time.  They can be overridden at the molecule (block) as necessary
 h1,
 h3,
@@ -32,15 +52,16 @@ h4 {
 }
 h1 {
   color: $text-light;
+  background-color: $primary;
   font-weight: 900; /* Heavy */
   font-size: 6em;
   letter-spacing: 1px;
   line-height: 1em;
 }
 h2 {
+  font-family: $fonts-headline;
   background: $accent1;
   color: $text-light;
-  display: inline-block;
   font-weight: normal;
   font-size: 3em;
   margin-bottom: 1em;

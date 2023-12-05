@@ -1,3 +1,9 @@
 .intro {
+  background-color: #ffffff;
+  background-position: center;
+  background-size: cover;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m 40 200 q 75 -180 200 -80 q 100 100 100 200 q -10 130 -150 20 q -200 2 -150 -140 z' fill='%236cb6d9' /%3E%3Cline x1='70' y1='90' x2='300' y2='350' style='stroke:%23133545;stroke-width:5' /%3E%3Cline x1='320' y1='95' x2='60' y2='300' style='stroke:%23133545;stroke-width:5' /%3E%3Cline x1='175' y1='50' x2='177' y2='370' style='stroke:%23133545;stroke-width:6' /%3E%3Cline x1='90' y1='210' x2='270' y2='208' style='stroke:%23133545;stroke-width:6' /%3E%3Ccircle cx='70' cy='90' r='10' fill='%23133545' /%3E%3Ccircle cx='300' cy='350' r='10' fill='%23133545' /%3E%3Ccircle cx='320' cy='95' r='10' fill='%23133545' /%3E%3Ccircle cx='60' cy='300' r='10' fill='%23133545' /%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-repeat: repeat;
   padding: 5%;
 }

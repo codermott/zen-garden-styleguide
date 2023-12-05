@@ -1,196 +1,151 @@
 @use "variables" as *; //this puts all the variables in the global namespace.
-// @use 'atoms';
-//@use 'molecules';
-//@use 'organisms' as o;
+@use "atoms";
+@use "molecules";
+@use "organisms";
+
+@import url("https://fonts.googleapis.com/css2?family=Atomic+Age&family=Neuton&display=swap");
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #f5f5f5;
+  padding: 5%;
+}
+
+body {
+  font-family: $fonts-body;
+  font-size: 85%;
+  color: #333;
+  background-color: #3498db;
+  margin: 0;
+  padding: 1em;
+}
+
+section {
+  background-color: white;
+  padding: 1em;
+  margin: 1em;
+}
+
+html,
+body {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin-top: 0;
+  text-align: justify;
+}
+
+h3 {
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  color: #7d775c;
+}
+
+a:link {
+  font-weight: bold;
+  text-decoration: none;
+  color: #b7a5df;
+}
+
+a:visited {
+  font-weight: bold;
+  text-decoration: none;
+  color: #d4cddc;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+  color: #9685ba;
+}
+
+.page-wrapper {
+  @include atoms.responsive("small") {
+    padding: 0;
   }
-  
-  html {
-	background-color: #f5f5f5;
-	padding: 5%;
+
+  @include atoms.responsive("medium") {
+    padding: 0 30px;
   }
-  
-  body {
-	font-family: 'Georgia, sans-serif';
-	font-size: 85%;
-	color: #333;
-	background-color: #3498db;
-	margin: 0;
-	padding: 1em;
+
+  @include atoms.responsive("large") {
+    padding: 0 80px;
   }
-  
-  section {
-	background-color: white;
-	padding: 1em;
-	margin: 1em;
+
+  margin: 0;
+}
+
+.intro {
+  @include atoms.set-flex(column, wrap);
+  width: 100%;
+}
+
+header h1 {
+  width: 100%;
+  margin-top: 10px;
+  display: block;
+  color: #fff;
+}
+
+header .banner h2 {
+  color: #fff;
+}
+
+header {
+  padding-top: 20px;
+  height: 87px;
+}
+
+.summary {
+  @include atoms.responsive(small) {
+    margin: 300px auto;
+    margin-bottom: 10px;
   }
-  
-  .colors {
-	display: flex;
-	flex-wrap: wrap;
-  
-	> h3 {
-	  width: 100%;
-	  flex: 1 0 100%;
-	}
-  
-	> figure {
-	  margin: 0;
-	  flex: 1 1 25%;
-	}
-  
-	.swatch {
-	  width: 100%;
-	  height: 100px;
-	  border: 1px solid;
-	}
-  
-	.primary {
-	  background-color: #3498db;
-	}
-  
-	.accent1 {
-	  background-color: #2ecc71;
-	}
-  
-	.accent2 {
-	  background-color: #e74c3c;
-	}
-  
-	.text-dark {
-	  background-color: #333;
-	}
-  
-	.element {
-	  border: 1px solid;
-	  margin: 0.5em;
-	  padding: 1em;
-	}
-  
-	.uppercase {
-	  text-transform: uppercase;
-	}
-  
-	.uppercase-light {
-	  text-transform: uppercase;
-	  color: #fff;
-	}
+  @include atoms.responsive(medium) {
+    margin: 300px auto;
+    margin-bottom: 10px;
   }
-  
-  html, body {
-	margin: 0;
-	padding: 0;
+  @include atoms.responsive(large) {
+    margin: 200px auto;
+    margin-bottom: 20px;
   }
-  
-  p {
-	margin-top: 0;
-	text-align: justify;
-  }
-  
-  h3 {
-	font: italic normal 1.4em Georgia, sans-serif;
-	letter-spacing: 1px;
-	margin-bottom: 0;
-	color: #7D775C;
-  }
-  
-  a:link {
-	font-weight: bold;
-	text-decoration: none;
-	color: #B7A5DF;
-  }
-  
-  a:visited {
-	font-weight: bold;
-	text-decoration: none;
-	color: #D4CDDC;
-  }
-  
-  a:hover, a:focus, a:active {
-	text-decoration: underline;
-	color: #9685BA;
-  }
-  
-  .page-wrapper {
-	background: url("http://csszengarden.com/001/zen-bg.jpg") no-repeat top left;
-	padding: 0 175px 0 110px;
-	margin: 0;
-	position: relative;
-  }
-  
-  .intro {
-	min-width: 470px;
-	width: 100%;
-  }
-  
-  header h1 {
-	background: transparent url("http://csszengarden.com/001/h1.gif") no-repeat top left;
-	margin-top: 10px;
-	display: block;
-	width: 219px;
-	height: 87px;
-	float: left;
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	color: #fff;
-  }
-  
-  header h2 {
-	background: transparent url("http://csszengarden.com/001/h2.gif") no-repeat top left;
-	margin-top: 58px;
-	margin-bottom: 40px;
-	width: 200px;
-	height: 18px;
-	float: right;
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	color: #fff;
-  }
-  
-  header {
-	padding-top: 20px;
-	height: 87px;
-  }
-  
-  .summary {
-	clear: both;
-	margin: 20px 20px 20px 10px;
-	width: 160px;
-	float: left;
-  }
-  
-  .summary p {
-	font: italic 1.1em/2.2 Georgia;
-	text-align: center;
-	color: #fff;
-  }
-  
-  .preamble {
-	clear: right;
-	padding: 0px 10px 0 10px;
-  }
-  
-  .supporting {
-	padding-left: 10px;
-	margin-bottom: 40px;
-  }
-  
-  footer {
-	text-align: center;
-	color: #fff;
-  }
-  
-  footer a:link, footer a:visited {
-	margin-right: 20px;
-	color: #fff;
-  }
-  
-  .sidebar {
-	margin-left: 20%;
-	position: relative;
-  }
-  
+}
+
+.summary p {
+  font: italic 1.1em/2.2l;
+  text-align: center;
+  color: #fff;
+  background-color: $primary;
+}
+
+.preamble {
+  margin: 0 auto;
+  padding: 0px 10px 0 10px;
+}
+
+.supporting {
+  padding-left: 10px;
+  margin-bottom: 40px;
+}
+
+footer {
+  text-align: center;
+  color: #fff;
+}
+
+footer a:link,
+footer a:visited {
+  margin-right: 20px;
+  color: #fff;
+}
+
+.sidebar {
+  margin-left: 20%;
+}

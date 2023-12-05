@@ -1,4 +1,8 @@
+@use "variables" as *;
+@use "atoms";
+
 .intro {
+  width: 100%;
   background-color: #ffffff;
   background-position: center;
   background-size: cover;
@@ -6,4 +10,72 @@
   background-attachment: fixed;
   background-repeat: repeat;
   padding: 5%;
+  margin: 1em;
+}
+
+.main {
+  width: 100%;
+  display: grid;
+  @include atoms.responsive(small) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  @include atoms.responsive(medium) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  @include atoms.responsive(large) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    .requirements {
+      grid-column: 2 / 4;
+    }
+
+    .participation {
+      grid-column: 2 / 4;
+    }
+
+    footer {
+      grid-column: 1 / 5;
+    }
+  }
+
+  div {
+    background-color: #fff;
+
+    padding: 20px;
+    h3 {
+      color: $primary;
+    }
+  }
+
+  .participation {
+    background-color: $accent2;
+  }
+}
+
+.sidebar {
+  width: 90%;
+  margin: 2em auto;
+  .wrapper {
+    @include atoms.responsive("small") {
+      @include atoms.set-flex(column);
+      gap: 20px;
+    }
+
+    @include atoms.responsive("medium") {
+      @include atoms.set-flex();
+      gap: 30px;
+      justify-content: center;
+    }
+
+    div {
+      background-color: $primary;
+      padding: 10px;
+      h3 {
+        color: $text-light;
+      }
+    }
+  }
 }

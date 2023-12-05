@@ -88,11 +88,10 @@ a:hover {
 
 .preamble {
   background: rgba(255, 255, 255, 0.9);
-  margin-left: -30%;
-  padding: 5% 5% 5% 30%;
 }
 
 .intro {
+  width: 100%;
   background-color: #ffffff;
   background-position: center;
   background-size: cover;
@@ -100,37 +99,98 @@ a:hover {
   background-attachment: fixed;
   background-repeat: repeat;
   padding: 5%;
+  margin: 1em;
+}
+
+.main {
+  width: 100%;
+  display: grid;
+}
+@media only screen and (max-width: 480px) {
+  .main {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+@media only screen and (min-width: 481px) {
+  .main {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+@media only screen and (min-width: 945px) {
+  .main {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .main .requirements {
+    grid-column: 2/4;
+  }
+  .main .participation {
+    grid-column: 2/4;
+  }
+  .main footer {
+    grid-column: 1/5;
+  }
+}
+.main div {
+  background-color: #fff;
+  padding: 20px;
+}
+.main div h3 {
+  color: #4e598c;
+}
+.main .participation {
+  background-color: #f9c7e4;
+}
+
+.sidebar {
+  width: 90%;
+  margin: 2em auto;
+}
+@media only screen and (max-width: 480px) {
+  .sidebar .wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+  }
+}
+@media only screen and (min-width: 481px) {
+  .sidebar .wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+}
+.sidebar .wrapper div {
+  background-color: #4e598c;
+  padding: 10px;
+}
+.sidebar .wrapper div h3 {
+  color: #fff;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html {
-  background-color: #f5f5f5;
-  padding: 5%;
-}
-
 body {
+  width: 98vw;
   font-family: "Neuton", Georgia, serif;
   font-size: 85%;
   color: #333;
   background-color: #3498db;
   margin: 0;
-  padding: 1em;
+}
+
+.page-wrapper {
+  width: 100%;
 }
 
 section {
   background-color: white;
   padding: 1em;
-  margin: 1em;
-}
-
-html,
-body {
-  width: 100vw;
-  margin: 0;
-  padding: 0;
 }
 
 p {
@@ -161,25 +221,6 @@ a:focus,
 a:active {
   text-decoration: underline;
   color: #9685ba;
-}
-
-.page-wrapper {
-  margin: 0;
-}
-@media only screen and (max-width: 480px) {
-  .page-wrapper {
-    padding: 0;
-  }
-}
-@media only screen and (min-width: 481px) {
-  .page-wrapper {
-    padding: 0 30px;
-  }
-}
-@media only screen and (min-width: 945px) {
-  .page-wrapper {
-    padding: 0 80px;
-  }
 }
 
 .intro {
@@ -249,10 +290,6 @@ footer a:link,
 footer a:visited {
   margin-right: 20px;
   color: #fff;
-}
-
-.sidebar {
-  margin-left: 20%;
 }
 
 /*# sourceMappingURL=style.css.map */
